@@ -1,58 +1,54 @@
-@media screen and ( max-width:570px ){
+.wrap{
+	width: 100%;
+	overflow: hidden;
+}
 
-	.wrap{
-		width: 100%;
-		overflow: hidden;
-	}
-
-	.open{
-		position: fixed;
-		&:hover{
-			&~.left_door>.on_the_left_door{
-				opacity: 0;
-			}
+.open{
+	position: fixed;
+	&:hover{
+		&~.left_door>.on_the_left_door{
+			opacity: 0;
 		}
 	}
+}
 
-	.left_door{
-		z-index: 9;
-		//overflow: hidden;
+.left_door{
+	z-index: 9;
+	//overflow: hidden;
+}
+
+.right_door{
+	z-index: 9;
+	overflow: hidden;
+}
+
+.on_the_left_door{
+	width: 95%;
+	height: auto;
+	position: fixed;
+	top: 2%;
+	right: 2%;
+	left: 2%;
+	bottom: auto;
+	z-index: 10;
+	opacity: 0.8;
+	background-color: #ddd;
+	&:after{
+		padding-top: 0;
 	}
+}
+.poster{
+	z-index: 25;
+	position: fixed;
+	width:40%;
+	height: auto;
+	left: auto;
+	right: 0;
+	bottom: 2%;
 
-	.right_door{
-		z-index: 9;
-		overflow: hidden;
-	}
+}
 
-	.on_the_left_door{
-		width: 95%;
-		height: auto;
-		position: fixed;
-		top: 2%;
-		right: 2%;
-		left: 2%;
-		bottom: auto;
-		z-index: 10;
-		opacity: 0.8;
-		background-color: #ddd;
-		&:after{
-			padding-top: 0;
-		}
-	}
-	.poster{
-		z-index: 25;
-		position: fixed;
-		width:40%;
-		height: auto;
-		left: auto;
-		right: 0;
-		bottom: 2%;
-
-	}
-
-	.in_door{
-		height: 100%;
-		width: auto;
-	}
-
+.in_door{
+	height: 100%;
+	width: auto;
 }
