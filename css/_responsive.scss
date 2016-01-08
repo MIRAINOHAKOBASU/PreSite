@@ -14,18 +14,12 @@
 		}
 	}
 
-	.door{
-		position: relative;
-	}
-
 	.left_door{
-		position: fixed;
 		z-index: 9;
 		//overflow: hidden;
 	}
 
 	.right_door{
-		position: fixed;
 		z-index: 9;
 		overflow: hidden;
 	}
@@ -57,14 +51,6 @@
 	}
 
 	.in_door{
-		z-index: 0;
-		position: fixed;
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		margin: auto;
-		overflow: hidden;
 		height: 100%;
 		width: auto;
 	}
