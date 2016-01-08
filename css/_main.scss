@@ -1,0 +1,224 @@
+$open : 8vh;
+
+body{
+	min-width: 960px;
+	font-size: 14px;
+	overflow-x: hidden;
+
+}
+
+.door{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: 10;
+	.backImage{
+		height: 100%;
+	}
+}
+
+.open{
+	width: 30vh;
+	height: 70%;
+	position: absolute;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 20;
+	&:hover{
+		&~.left_door{
+			left: -$open;
+		}
+		&~.right_door{
+			right: -$open;
+		}
+		&>.first{
+			opacity: 0.9;
+			bottom: 57vh;
+
+		}
+	}
+}
+
+//arrow_box/--
+
+.arrow_box {
+	//position: relative;
+	background: #f0f0f0;
+	border: 2px solid #6d6e75;
+	border-radius: 10px;
+}
+.arrow_box:after, .arrow_box:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-color: rgba(240, 240, 240, 0);
+	border-top-color: #f0f0f0;
+	border-width: 10px;
+	margin-left: -10px;
+}
+.arrow_box:before {
+	border-color: rgba(109, 110, 117, 0);
+	border-top-color: #6d6e75;
+	border-width: 13px;
+	margin-left: -13px;
+}
+
+//arrow_box--/
+
+.comment{
+	position: fixed;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	height: 5vh;
+	opacity: 0;
+	transition-delay: 0.1s;
+	border-radius: 10px;
+	line-height: 5vh;
+	p{
+		text-align: center;
+		font-size: 1.5em;
+		display: block;
+		@media screen and (max-height : 620px){
+			font-size: 1em;
+		}
+	}
+
+}
+
+.first{
+	bottom: 56vh;
+	width: 20vh;
+	transition: 0.3s;
+}
+
+.next{
+	bottom: 57vh;
+	width: 30vh;
+	transition: 0.2s;
+	z-index: 3;
+	&:hover{
+		&+.first{
+			opacity: 0;
+		}
+		opacity: 0.9;
+	}
+}
+
+.left_door{
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	background-color: #FFF;
+	transition: 0.4s;
+	transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+	left: 0;
+	.backImage{
+		position: absolute;
+		right: 0;
+	}
+}
+
+.right_door{
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	background-color: #FFF;
+	transition: 0.4s;
+	transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+	right: 0;
+	.backImage{
+		position: absolute;
+		left: 0;
+	}
+}
+
+.on_the_left_door{
+	width: 45vh;
+	max-height: 70vh;
+	overflow-y: scroll;
+	position: absolute;
+	right: 10vh;
+	bottom: 15vh;
+	z-index: 30;
+	color: #222;
+	opacity: 0.8;
+	background-color: #ddd;
+	padding: 1vh;
+	transition: 0.3s;
+	&:hover{
+		opacity: 0.9;
+	}
+	&:after{
+		padding-top: 75%;
+		content: ""
+	}
+	h1{
+		font-size: 2em;
+		@media screen and (max-height : 587px){
+			font-size: 1.5em;
+		}
+	}
+	h2{
+		font-size: 1.5em;
+		@media screen and (max-height : 587px){
+			font-size: 1.2em;
+		}
+		margin: 0.5vh 0;
+	}
+	h3{
+		font-size: 1.2em;
+		@media screen and (max-height : 587px){
+			font-size: 1.1em;
+		}
+		margin: 0.5vh 0;
+	}
+	p{
+		margin-top: 1vh;
+	}
+
+}
+
+.poster{
+	height: 30%;
+	position: absolute;
+	left: 30vh;
+	bottom: 10vh;
+	opacity: 0.7;
+	transition: 0.3s;
+	&:hover{
+		opacity: 0.9;
+	}
+}
+
+.back{
+	overflow-y: hidden;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-color: #89381a;
+}
+
+.kanou{
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 45vh;
+	//bottom: -51vh;
+	margin: 0 auto;
+	width: 30vh;
+}
+
+.in_door{
+	width: 100%;
+}

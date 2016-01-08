@@ -1,0 +1,569 @@
+@charset "UTF-8";
+* {
+  font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
+}
+
+#loader {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  _position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -50%;
+  margin-left: -50%;
+  z-index: 100;
+}
+
+#fade {
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: #FFFFFF;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 50;
+}
+
+/*! sanitize.css v3.0.0 | CC0 1.0 Public Domain | github.com/10up/sanitize.css */
+/*
+ * Normalization
+ */
+audio:not([controls]) {
+  display: none;
+}
+
+button {
+  overflow: visible;
+  -webkit-appearance: button;
+}
+
+details {
+  display: block;
+}
+
+html {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+}
+
+input {
+  -webkit-border-radius: 0;
+}
+input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+}
+input[type="number"] {
+  width: auto;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+}
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+main {
+  display: block;
+}
+
+pre {
+  overflow: auto;
+}
+
+progress {
+  display: inline-block;
+}
+
+small {
+  font-size: 75%;
+}
+
+summary {
+  display: block;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+template {
+  display: none;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[hidden] {
+  display: none;
+}
+
+/*
+ * Universal inheritance
+ */
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+* {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+::before,
+::after {
+  text-decoration: inherit;
+  vertical-align: inherit;
+}
+
+/*
+ * Opinionated defaults
+ */
+*,
+::before,
+::after {
+  border-style: solid;
+  border-width: 0;
+}
+
+* {
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: default;
+  font: 100%/1.5 sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  text-decoration: none;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+button,
+input,
+select,
+textarea {
+  background-color: transparent;
+}
+
+button,
+input,
+select,
+textarea {
+  color: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+}
+
+button,
+[type="button"],
+[type="date"],
+[type="datetime"],
+[type="datetime-local"],
+[type="email"],
+[type="month"],
+[type="number"],
+[type="password"],
+[type="reset"],
+[type="search"],
+[type="submit"],
+[type="tel"],
+[type="text"],
+[type="time"],
+[type="url"],
+[type="week"],
+select,
+textarea {
+  min-height: 1.5em;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+}
+
+nav ol,
+nav ul {
+  list-style: none;
+}
+
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+select::-ms-expand {
+  display: none;
+}
+select::-ms-value {
+  color: currentColor;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+::-moz-selection {
+  background-color: #B3D4FC;
+  color: #ffffff;
+  text-shadow: none;
+}
+
+::selection {
+  background-color: #B3D4FC;
+  color: #ffffff;
+  text-shadow: none;
+}
+
+[aria-busy="true"] {
+  cursor: progress;
+}
+
+[aria-controls] {
+  cursor: pointer;
+}
+
+[aria-disabled] {
+  cursor: default;
+}
+
+[hidden][aria-hidden="false"] {
+  clip: rect(0 0 0 0);
+  display: inherit;
+  position: absolute;
+}
+[hidden][aria-hidden="false"]:focus {
+  clip: auto;
+}
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+body {
+  min-width: 960px;
+  font-size: 14px;
+  overflow-x: hidden;
+}
+
+.door {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 10;
+}
+.door .backImage {
+  height: 100%;
+}
+
+.open {
+  width: 30vh;
+  height: 70%;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+}
+.open:hover ~ .left_door {
+  left: -8vh;
+}
+.open:hover ~ .right_door {
+  right: -8vh;
+}
+.open:hover > .first {
+  opacity: 0.9;
+  bottom: 57vh;
+}
+
+.arrow_box {
+  background: #f0f0f0;
+  border: 2px solid #6d6e75;
+  border-radius: 10px;
+}
+
+.arrow_box:after, .arrow_box:before {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.arrow_box:after {
+  border-color: rgba(240, 240, 240, 0);
+  border-top-color: #f0f0f0;
+  border-width: 10px;
+  margin-left: -10px;
+}
+
+.arrow_box:before {
+  border-color: rgba(109, 110, 117, 0);
+  border-top-color: #6d6e75;
+  border-width: 13px;
+  margin-left: -13px;
+}
+
+.comment {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: 5vh;
+  opacity: 0;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+  border-radius: 10px;
+  line-height: 5vh;
+}
+.comment p {
+  text-align: center;
+  font-size: 1.5em;
+  display: block;
+}
+@media screen and (max-height: 620px) {
+  .comment p {
+    font-size: 1em;
+  }
+}
+
+.first {
+  bottom: 56vh;
+  width: 20vh;
+  -webkit-transition: 0.3s;
+          transition: 0.3s;
+}
+
+.next {
+  bottom: 57vh;
+  width: 30vh;
+  -webkit-transition: 0.2s;
+          transition: 0.2s;
+  z-index: 3;
+}
+.next:hover {
+  opacity: 0.9;
+}
+.next:hover + .first {
+  opacity: 0;
+}
+
+.left_door {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  background-color: #FFF;
+  -webkit-transition: 0.4s;
+          transition: 0.4s;
+  -webkit-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+          transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  left: 0;
+}
+.left_door .backImage {
+  position: absolute;
+  right: 0;
+}
+
+.right_door {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  background-color: #FFF;
+  -webkit-transition: 0.4s;
+          transition: 0.4s;
+  -webkit-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+          transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  right: 0;
+}
+.right_door .backImage {
+  position: absolute;
+  left: 0;
+}
+
+.on_the_left_door {
+  width: 45vh;
+  max-height: 70vh;
+  overflow-y: scroll;
+  position: absolute;
+  right: 10vh;
+  bottom: 15vh;
+  z-index: 30;
+  color: #222;
+  opacity: 0.8;
+  background-color: #ddd;
+  padding: 1vh;
+  -webkit-transition: 0.3s;
+          transition: 0.3s;
+}
+.on_the_left_door:hover {
+  opacity: 0.9;
+}
+.on_the_left_door:after {
+  padding-top: 75%;
+  content: "";
+}
+.on_the_left_door h1 {
+  font-size: 2em;
+}
+@media screen and (max-height: 587px) {
+  .on_the_left_door h1 {
+    font-size: 1.5em;
+  }
+}
+.on_the_left_door h2 {
+  font-size: 1.5em;
+  margin: 0.5vh 0;
+}
+@media screen and (max-height: 587px) {
+  .on_the_left_door h2 {
+    font-size: 1.2em;
+  }
+}
+.on_the_left_door h3 {
+  font-size: 1.2em;
+  margin: 0.5vh 0;
+}
+@media screen and (max-height: 587px) {
+  .on_the_left_door h3 {
+    font-size: 1.1em;
+  }
+}
+.on_the_left_door p {
+  margin-top: 1vh;
+}
+
+.poster {
+  height: 30%;
+  position: absolute;
+  left: 30vh;
+  bottom: 10vh;
+  opacity: 0.7;
+  -webkit-transition: 0.3s;
+          transition: 0.3s;
+}
+.poster:hover {
+  opacity: 0.9;
+}
+
+.back {
+  overflow-y: hidden;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #89381a;
+}
+
+.kanou {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 45vh;
+  margin: 0 auto;
+  width: 30vh;
+}
+
+.in_door {
+  width: 100%;
+}
+
+@media screen and (max-width: 570px) {
+  .wrap {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .open {
+    position: fixed;
+  }
+  .open:hover ~ .left_door > .on_the_left_door {
+    opacity: 0;
+  }
+
+  .door {
+    position: relative;
+  }
+
+  .left_door {
+    position: fixed;
+    z-index: 9;
+  }
+
+  .right_door {
+    position: fixed;
+    z-index: 9;
+    overflow: hidden;
+  }
+
+  .on_the_left_door {
+    width: 95%;
+    height: auto;
+    position: fixed;
+    top: 2%;
+    right: 2%;
+    left: 2%;
+    bottom: auto;
+    z-index: 10;
+    opacity: 0.8;
+    background-color: #ddd;
+  }
+  .on_the_left_door:after {
+    padding-top: 0;
+  }
+
+  .poster {
+    z-index: 25;
+    position: fixed;
+    width: 40%;
+    height: auto;
+    left: auto;
+    right: 0;
+    bottom: 2%;
+  }
+
+  .in_door {
+    z-index: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    overflow: hidden;
+    height: 100%;
+    width: auto;
+  }
+}
