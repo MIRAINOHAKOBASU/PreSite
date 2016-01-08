@@ -554,7 +554,8 @@ textarea {
     bottom: auto;
     z-index: 10;
     opacity: 0.8;
-    background-color: #ddd;
+    color: #ddd;
+    background-color: #222;
   }
   .on_the_left_door:after {
     padding-top: 0;
