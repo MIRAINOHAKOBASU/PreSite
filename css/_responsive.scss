@@ -1,6 +1,18 @@
-.wrap{
-	width: 100%;
-	overflow: hidden;
+.left_door{
+	position: fixed;
+	height: 100%;
+	right: 50%;
+}
+
+.right_door{
+	position: fixed;
+	height: 100%;
+	left: 50%;
+}
+
+.backImage{
+	height: 100%;
+	z-index: 10;
 }
 
 .open{
@@ -10,16 +22,6 @@
 			opacity: 0;
 		}
 	}
-}
-
-.left_door{
-	z-index: 9;
-	//overflow: hidden;
-}
-
-.right_door{
-	z-index: 9;
-	overflow: hidden;
 }
 
 .on_the_left_door{
@@ -45,10 +47,34 @@
 	left: auto;
 	right: 0;
 	bottom: 2%;
+	opacity: 0.8;
 
 }
 
 .in_door{
 	height: 100%;
 	width: auto;
+}
+
+.kanou{
+	z-index: 50;
+	position: absolute;
+	margin: 0 auto;
+	margin-top: 300%;
+	height: 70%;
+}
+
+.first{
+	display: none;
+}
+
+.next{
+	z-index: 50;
+	position: absolute;
+	margin-top: 270%;
+	width: 40%;
+}
+
+.in_door{
+	display: none;
 }
